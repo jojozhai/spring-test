@@ -18,6 +18,8 @@ import javax.persistence.OrderBy;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
+import org.hibernate.validator.constraints.NotBlank;
+
 /**
  * @author zhailiang
  *
@@ -26,6 +28,9 @@ import javax.persistence.TemporalType;
 public class Author extends DomainImpl {
 	
 	private String name;
+	
+	@NotBlank
+	private String email;
 	
 	@Column(columnDefinition = "INT(3)")
 	private int age;
@@ -122,6 +127,14 @@ public class Author extends DomainImpl {
 
 	public void setInfo(AuthorInfo info) {
 		this.info = info;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
 	}
 
 }
