@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.roncoo.support;
+package com.lesson.support;
 
 import javax.persistence.EntityManager;
 

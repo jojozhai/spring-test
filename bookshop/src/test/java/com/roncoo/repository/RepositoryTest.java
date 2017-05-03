@@ -11,11 +11,14 @@ import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.TransactionStatus;
 import org.springframework.transaction.support.DefaultTransactionDefinition;
 
+import com.lesson.domain.Author;
+import com.lesson.domain.Book;
+import com.lesson.domain.Ebook;
+import com.lesson.domain.PrintBook;
+import com.lesson.repository.AuthorRepository;
+import com.lesson.repository.BookRepository;
+import com.lesson.repository.PrintBookRepository;
 import com.roncoo.BaseTest;
-import com.roncoo.domain.Author;
-import com.roncoo.domain.Book;
-import com.roncoo.domain.Ebook;
-import com.roncoo.domain.PrintBook;
 
 /**
  * @author zhailiang

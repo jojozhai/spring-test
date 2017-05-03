@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.roncoo.domain;
+package com.lesson.domain;
 
 import java.util.Date;
 

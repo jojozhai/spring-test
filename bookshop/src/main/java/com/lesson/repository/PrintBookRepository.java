@@ -1,10 +1,10 @@
 /**
  * 
  */
-package com.roncoo.repository;
+package com.lesson.repository;
 
-import com.roncoo.domain.PrintBook;
-import com.roncoo.support.BookShopRepository;
+import com.lesson.domain.PrintBook;
+import com.lesson.support.BookShopRepository;
 
 /**
  * @author zhailiang

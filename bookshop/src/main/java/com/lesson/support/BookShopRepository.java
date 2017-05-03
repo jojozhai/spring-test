@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.roncoo.support;
+package com.lesson.support;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.JpaSpecificationExecutor;

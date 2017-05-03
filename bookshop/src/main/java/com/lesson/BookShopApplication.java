@@ -1,13 +1,13 @@
 /**
  * 
  */
-package com.roncoo;
+package com.lesson;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
-import com.roncoo.support.BookShopRepositoryImpl;
+import com.lesson.support.BookShopRepositoryImpl;
 
 /**
  * @author zhailiang

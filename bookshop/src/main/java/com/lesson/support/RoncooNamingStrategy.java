@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.roncoo.support;
+package com.lesson.support;
 
 import org.hibernate.boot.model.naming.Identifier;
 import org.hibernate.boot.model.naming.ImplicitNamingStrategyJpaCompliantImpl;

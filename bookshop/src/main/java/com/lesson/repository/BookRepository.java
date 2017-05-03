@@ -1,12 +1,12 @@
 /**
  * 
  */
-package com.roncoo.repository;
+package com.lesson.repository;
 
 import org.springframework.data.jpa.repository.EntityGraph;
 
-import com.roncoo.domain.Book;
-import com.roncoo.support.BookShopRepository;
+import com.lesson.domain.Book;
+import com.lesson.support.BookShopRepository;
 
 /**
  * @author zhailiang

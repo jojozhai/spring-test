@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.roncoo.domain;
+package com.lesson.domain;
 
 import javax.persistence.Embeddable;
 
