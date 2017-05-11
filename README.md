@@ -157,7 +157,3 @@ Dubbo（服务治理）.
 59.持续集成概述
 
 60.使用jenkins实现持续集成
-
-<p>
-    <img src="http://static.roncoo.com/images/rSRMWRnF5nAYnWH8tWErxCCyQAhwTR5K.png" title="images/rSRMWRnF5nAYnWH8tWErxCCyQAhwTR5K.png" alt="images/rSRMWRnF5nAYnWH8tWErxCCyQAhwTR5K.png" width="570" height="271"/> 
-</p>
