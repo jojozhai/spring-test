@@ -159,11 +159,11 @@ Dubbo（服务治理）.
 60.使用jenkins实现持续集成
 
 <p>
-    <img src="http://static.roncoo.com/images/RiNNF3TD7QPzyDbFfC2smwBSmiwjmiTC.png" title="images/RiNNF3TD7QPzyDbFfC2smwBSmiwjmiTC.png" alt="images/RiNNF3TD7QPzyDbFfC2smwBSmiwjmiTC.png" width="536" height="260"/> 
+    <img src="http://static.roncoo.com/images/RiNNF3TD7QPzyDbFfC2smwBSmiwjmiTC.png" title="images/RiNNF3TD7QPzyDbFfC2smwBSmiwjmiTC.png" alt="images/RiNNF3TD7QPzyDbFfC2smwBSmiwjmiTC.png" width="536" height="360"/> 
 </p>
 <p>
     <br/> 
 </p>
 <p>
-    <img src="http://static.roncoo.com/images/rSRMWRnF5nAYnWH8tWErxCCyQAhwTR5K.png" title="images/rSRMWRnF5nAYnWH8tWErxCCyQAhwTR5K.png" alt="images/rSRMWRnF5nAYnWH8tWErxCCyQAhwTR5K.png" width="570" height="271"/> 
+    <img src="http://static.roncoo.com/images/rSRMWRnF5nAYnWH8tWErxCCyQAhwTR5K.png" title="images/rSRMWRnF5nAYnWH8tWErxCCyQAhwTR5K.png" alt="images/rSRMWRnF5nAYnWH8tWErxCCyQAhwTR5K.png" width="570" height="371"/> 
 </p>
