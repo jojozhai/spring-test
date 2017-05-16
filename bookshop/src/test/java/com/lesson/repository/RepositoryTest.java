@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.roncoo.repository;
+package com.lesson.repository;
 
 import java.util.List;
 
@@ -11,6 +11,7 @@ import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.TransactionStatus;
 import org.springframework.transaction.support.DefaultTransactionDefinition;
 
+import com.lesson.BaseTest;
 import com.lesson.domain.Author;
 import com.lesson.domain.Book;
 import com.lesson.domain.Ebook;
@@ -18,7 +19,6 @@ import com.lesson.domain.PrintBook;
 import com.lesson.repository.AuthorRepository;
 import com.lesson.repository.BookRepository;
 import com.lesson.repository.PrintBookRepository;
-import com.roncoo.BaseTest;
 
 /**
  * @author zhailiang

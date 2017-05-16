@@ -11,6 +11,8 @@ import javax.validation.Valid;
 
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.web.PageableDefault;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -43,6 +45,12 @@ public class BookController {
 	@ApiOperation("查询图书信息")
 	public List<BookInfo> query(BookCondition condition, @PageableDefault(size = 10) Pageable pageable) {
 
+		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+		System.out.println(authentication);
+		if(authentication != null) {
+			System.out.println(authentication.getPrincipal());
+		}
+		
 //		System.out.println(pageable.getPageNumber());
 //		System.out.println(pageable.getPageSize());
 //		System.out.println(pageable.getSort());
@@ -59,6 +67,13 @@ public class BookController {
 	@JsonView(BookDetailView.class)
 	@ApiOperation("获取图书详细信息")
 	public BookInfo getInfo(@ApiParam("图书ID") @PathVariable Long id) throws Exception {
+		
+		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+		System.out.println(authentication);
+		if(authentication != null) {
+			System.out.println(authentication.getPrincipal());
+		}
+		
 		System.out.println(id);
 		BookInfo bookInfo = new BookInfo();
 		bookInfo.setName("战争与和平");

@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.roncoo;
+package com.lesson;
 
 import org.junit.Test;
 
