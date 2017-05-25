@@ -5,6 +5,7 @@ package com.lesson;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.session.jdbc.config.annotation.web.http.EnableJdbcHttpSession;
 
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
@@ -14,6 +15,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
  */
 @SpringBootApplication
 @EnableSwagger2
+@EnableJdbcHttpSession
 public class BookShopAdminApplication {
 
 	/**

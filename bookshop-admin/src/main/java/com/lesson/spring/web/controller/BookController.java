@@ -69,12 +69,12 @@ public class BookController {
 	public BookInfo getInfo(@ApiParam("图书ID") @PathVariable Long id) throws Exception {
 		
 		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-		System.out.println(authentication);
-		if(authentication != null) {
-			System.out.println(authentication.getPrincipal());
-		}
+//		System.out.println(authentication);
+//		if(authentication != null) {
+//			System.out.println(authentication.getPrincipal());
+//		}
 		
-		System.out.println(id);
+//		System.out.println(id);
 		BookInfo bookInfo = new BookInfo();
 		bookInfo.setName("战争与和平");
 		bookInfo.setPublishDate(new Date());
