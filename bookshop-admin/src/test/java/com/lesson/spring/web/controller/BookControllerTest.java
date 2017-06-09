@@ -73,10 +73,12 @@ public class BookControllerTest {
 	
 	@Test
 	public void whenCreateSuccess() throws Exception {
-		String content = "{\"id\":null,\"name\":\"战争与和平\",\"content\":null, \"publishDate\":\"2017-05-05\"}";
-		mockMvc.perform(post("/book").content(content).contentType(MediaType.APPLICATION_JSON))
+		String content = "{\"id\":null,\"name\":\"战争与和平\",\"content\":null, \"publishDate\":"+new Date().getTime()+"}";
+		String result = mockMvc.perform(post("/book").content(content).contentType(MediaType.APPLICATION_JSON))
 			.andExpect(status().isOk())
-			.andExpect(jsonPath("$.id").value("1"));
+			.andExpect(jsonPath("$.id").value("1"))
+			.andReturn().getResponse().getContentAsString();
+		System.out.println(result);
 	}
 	
 	@Test

@@ -9,6 +9,7 @@ import java.util.List;
 
 import javax.validation.Valid;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.web.PageableDefault;
 import org.springframework.security.core.Authentication;
@@ -28,6 +29,7 @@ import com.lesson.spring.dto.BookCondition;
 import com.lesson.spring.dto.BookInfo;
 import com.lesson.spring.dto.BookInfo.BookDetailView;
 import com.lesson.spring.dto.BookInfo.BookListView;
+import com.lesson.spring.service.BookService;
 
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
@@ -39,6 +41,9 @@ import io.swagger.annotations.ApiParam;
 @RestController
 @RequestMapping("/book")
 public class BookController {
+	
+	@Autowired
+	private BookService bookService;
 	
 	@GetMapping
 	@JsonView(BookListView.class)
@@ -67,6 +72,8 @@ public class BookController {
 	@JsonView(BookDetailView.class)
 	@ApiOperation("获取图书详细信息")
 	public BookInfo getInfo(@ApiParam("图书ID") @PathVariable Long id) throws Exception {
+		
+		bookService.getInfo(id);
 		
 		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
 //		System.out.println(authentication);

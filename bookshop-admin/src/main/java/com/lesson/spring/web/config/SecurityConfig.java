@@ -6,9 +6,11 @@ package com.lesson.spring.web.config;
 import javax.sql.DataSource;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.security.oauth2.client.EnableOAuth2Sso;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
+import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
@@ -24,6 +26,8 @@ import org.springframework.security.web.authentication.rememberme.PersistentToke
  */
 @Configuration
 @EnableWebSecurity
+@EnableGlobalMethodSecurity(prePostEnabled = true)
+@EnableOAuth2Sso
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	
 	@Autowired
@@ -37,6 +41,12 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	
 	@Autowired
 	private DataSource dataSource;
+	
+//	@Bean
+//	public OAuth2RestTemplate oauth2RestTemplate(OAuth2ClientContext oauth2ClientContext,
+//	        OAuth2ProtectedResourceDetails details) {
+//	    return new OAuth2RestTemplate(details, oauth2ClientContext);
+//	}
 	
 	@Bean
 	public PersistentTokenRepository persistentTokenRepository() {
@@ -70,15 +80,19 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 				.tokenValiditySeconds(60)
 				.and()
 //			.sessionManagement()
+//				.sessionFixation().changeSessionId()
 //				.invalidSessionUrl("/session.html")
 //				.maximumSessions(1)
 //				.maxSessionsPreventsLogin(true)
 //				.and()
 //				.and()
 			.csrf().disable()
-			.authorizeRequests()
-				.antMatchers("/book", "/login.html", "/auth", "/session.html").permitAll()
+//				.csrfTokenRepository(CookieCsrfTokenRepository.withHttpOnlyFalse())
+//				.and()
+				.authorizeRequests()
+				.antMatchers("/webjars/**", "/login", "/book", "/login.html", "/auth", "/session.html").permitAll()
 				.anyRequest().authenticated();
+				//.access("@bookSecurity.check(authentication,request)");
 		
 	}
 
