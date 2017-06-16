@@ -44,7 +44,7 @@
 		</dependency>
 		<dependency>
 			<groupId>com.roncoo.spring</groupId>
-			<artifactId>bookshop</artifactId>
+			<artifactId>bookshop-api</artifactId>
 			<version>1.0.0-SNAPSHOT</version>
 		</dependency>
 		<dependency>
@@ -68,5 +68,32 @@
 		</dependency>
 		<!-- <dependency> <groupId>org.springframework.session</groupId> <artifactId>spring-session-jdbc</artifactId> 
 			</dependency> -->
+		<dependency>
+			<groupId>com.alibaba</groupId>
+			<artifactId>dubbo</artifactId>
+			<version>2.4.9</version>
+			<exclusions>
+				<exclusion>
+					<groupId>org.springframework</groupId>
+					<artifactId>spring</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<dependency>
+			<groupId>com.101tec</groupId>
+			<artifactId>zkclient</artifactId>
+			<version>0.8</version>
+			<exclusions>
+				<exclusion>
+					<groupId>org.slf4j</groupId>
+					<artifactId>slf4j-log4j12</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<dependency>
+			<groupId>org.eclipse.jdt.core.compiler</groupId>
+			<artifactId>ecj</artifactId>
+			<version>4.5.1</version>
+		</dependency>
 	</dependencies>
 </project>

@@ -3,11 +3,7 @@
  */
 package com.lesson.spring.web.config;
 
-import javax.sql.DataSource;
-
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.security.oauth2.client.EnableOAuth2Sso;
-import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
@@ -17,8 +13,6 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.authentication.AuthenticationFailureHandler;
 import org.springframework.security.web.authentication.AuthenticationSuccessHandler;
-import org.springframework.security.web.authentication.rememberme.JdbcTokenRepositoryImpl;
-import org.springframework.security.web.authentication.rememberme.PersistentTokenRepository;
 
 /**
  * @author zhailiang
@@ -27,7 +21,7 @@ import org.springframework.security.web.authentication.rememberme.PersistentToke
 @Configuration
 @EnableWebSecurity
 @EnableGlobalMethodSecurity(prePostEnabled = true)
-@EnableOAuth2Sso
+//@EnableOAuth2Sso
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	
 	@Autowired
@@ -39,8 +33,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	@Autowired
 	private AuthenticationFailureHandler bookShopAuthenticationFailureHandler;
 	
-	@Autowired
-	private DataSource dataSource;
+//	@Autowired
+//	private DataSource dataSource;
 	
 //	@Bean
 //	public OAuth2RestTemplate oauth2RestTemplate(OAuth2ClientContext oauth2ClientContext,
@@ -48,13 +42,13 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 //	    return new OAuth2RestTemplate(details, oauth2ClientContext);
 //	}
 	
-	@Bean
-	public PersistentTokenRepository persistentTokenRepository() {
-		JdbcTokenRepositoryImpl tokenRepository = new JdbcTokenRepositoryImpl();
-//		tokenRepository.setCreateTableOnStartup(true);
-		tokenRepository.setDataSource(dataSource);
-		return tokenRepository;
-	}
+//	@Bean
+//	public PersistentTokenRepository persistentTokenRepository() {
+//		JdbcTokenRepositoryImpl tokenRepository = new JdbcTokenRepositoryImpl();
+////		tokenRepository.setCreateTableOnStartup(true);
+//		tokenRepository.setDataSource(dataSource);
+//		return tokenRepository;
+//	}
 	
 	@Override
 	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
@@ -75,10 +69,10 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 				.successHandler(bookShopAuthenticationSuccessHandler)
 				.failureHandler(bookShopAuthenticationFailureHandler)
 				.and()
-			.rememberMe()
-				.tokenRepository(persistentTokenRepository())
-				.tokenValiditySeconds(60)
-				.and()
+//			.rememberMe()
+//				.tokenRepository(persistentTokenRepository())
+//				.tokenValiditySeconds(60)
+//				.and()
 //			.sessionManagement()
 //				.sessionFixation().changeSessionId()
 //				.invalidSessionUrl("/session.html")
