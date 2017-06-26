@@ -20,6 +20,8 @@ import javax.persistence.TemporalType;
 
 import org.hibernate.validator.constraints.NotBlank;
 
+import com.lesson.dto.Sex;
+
 /**
  * @author zhailiang
  *
@@ -51,7 +53,7 @@ public class Author extends DomainImpl {
 	private List<Address> addresses;
 	
 	@OneToMany(mappedBy = "author")
-	@OrderBy("book.name ASC")
+//	@OrderBy("book.name ASC")
 	private List<BookAuthor> books;
 	
 	@OneToOne

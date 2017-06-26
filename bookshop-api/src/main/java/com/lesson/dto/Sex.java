@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.lesson.domain;
+package com.lesson.dto;
 
 /**
  * @author zhailiang

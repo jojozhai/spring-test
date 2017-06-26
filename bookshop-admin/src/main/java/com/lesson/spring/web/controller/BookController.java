@@ -5,6 +5,8 @@ package com.lesson.spring.web.controller;
 
 import javax.validation.Valid;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -37,11 +39,15 @@ public class BookController {
 	@Autowired
 	private BookService bookService;
 	
+	private Logger logger = LoggerFactory.getLogger(getClass());
+	
 	@GetMapping
 //	@JsonView(BookListView.class)
 	@ApiOperation("查询图书信息")
-	public Page<BookInfo> query(BookCondition condition, @PageableDefault(size = 10) Pageable pageable) {
-
+	public Page<BookInfo> query(BookCondition condition, Pageable pageable) {
+		
+		logger.info("这是日志!!");
+		
 //		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
 //		System.out.println(authentication);
 //		if(authentication != null) {

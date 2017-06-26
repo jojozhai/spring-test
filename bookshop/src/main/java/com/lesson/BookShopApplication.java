@@ -23,7 +23,9 @@ public class BookShopApplication {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		SpringApplication.run(BookShopApplication.class, args);
+		SpringApplication application = new SpringApplication(BookShopApplication.class);
+//		application.setAdditionalProfiles("pro");
+		application.run(args);
 	}
 
 }

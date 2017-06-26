@@ -8,7 +8,6 @@ import java.util.List;
 
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
-import javax.persistence.criteria.Path;
 import javax.persistence.criteria.Predicate;
 import javax.persistence.criteria.Root;
 
@@ -20,14 +19,14 @@ import org.springframework.data.jpa.domain.Specification;
  * @author jojo 2014-2-17 下午2:29:16
  *
  */
-public abstract class PzSimpleSpecification<T, C> extends AbstractEventConditionBuilder<T, C> 
+public abstract class ShopSimpleSpecification<T, C> extends AbstractEventConditionBuilder<T, C> 
 				implements Specification<T> {
 	
 
 	/**
 	 * @param condition
 	 */
-	public PzSimpleSpecification(C condition) {
+	public ShopSimpleSpecification(C condition) {
 		super(condition);
 	}
 	
@@ -69,16 +68,6 @@ public abstract class PzSimpleSpecification<T, C> extends AbstractEventCondition
 		return null;
 	}
 
-	/**
-	 * 获取organFullId的路径，默认是直接读取organFullId属相，当目标与organ有关联时，可能通过关联对象获取，这是，子类需要覆盖此方法并制定获取organFullId的路径
-	 * @param queryWraper
-	 * @return
-	 */
-	protected Path<String> getDomainOrganFullIdPath(QueryWraper<T> queryWraper) {
-		Path<String> fieldPath = queryWraper.getRoot().get("organFullId");
-		return fieldPath;
-	}
-	
 	/**
 	 * <pre>
 	 *	子类可以通过覆盖此方法实现关联抓取，避免n+1查询

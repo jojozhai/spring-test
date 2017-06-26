@@ -32,7 +32,7 @@ public class FileController {
 	
 	@PostMapping("/upload")
 	public FileInfo update(MultipartFile file) throws Exception {
-		
+	
 		System.out.println(file.getContentType());
 		System.out.println(file.getName());
 		System.out.println(file.getOriginalFilename());

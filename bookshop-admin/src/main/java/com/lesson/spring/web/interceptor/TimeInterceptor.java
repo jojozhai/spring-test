@@ -8,6 +8,7 @@ import java.util.Date;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.slf4j.MDC;
 import org.springframework.stereotype.Component;
 import org.springframework.web.method.HandlerMethod;
 import org.springframework.web.servlet.HandlerInterceptor;
@@ -32,6 +33,8 @@ public class TimeInterceptor implements HandlerInterceptor {
 		System.out.println(((HandlerMethod)handler).getMethod().getName());
 		
 		request.setAttribute("startTime", new Date().getTime());
+		
+		MDC.put("userId", "123456");
 		
 		return true;
 	}

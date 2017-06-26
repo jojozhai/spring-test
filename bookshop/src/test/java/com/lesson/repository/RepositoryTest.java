@@ -16,9 +16,9 @@ import com.lesson.domain.Author;
 import com.lesson.domain.Book;
 import com.lesson.domain.Ebook;
 import com.lesson.domain.PrintBook;
-import com.lesson.repository.AuthorRepository;
-import com.lesson.repository.BookRepository;
-import com.lesson.repository.PrintBookRepository;
+import com.lesson.dto.AuthorCondition;
+import com.lesson.dto.Sex;
+import com.lesson.repository.spec.AuthorSpec;
 
 /**
  * @author zhailiang
@@ -37,6 +37,42 @@ public class RepositoryTest extends BaseTest {
 	
 	@Autowired
 	private PlatformTransactionManager transactionManager;
+	
+	
+	@Test
+	public void testSpecQuery1() {
+		
+		AuthorCondition condition = new AuthorCondition();
+		condition.setName("test");
+		authorRepository.findAll(new AuthorSpec(condition));
+		
+	}
+	
+	@Test
+	public void testSpecQuery2() {
+		
+		AuthorCondition condition = new AuthorCondition();
+		condition.setName("test");
+		condition.setAge(18);
+		authorRepository.findAll(new AuthorSpec(condition));
+		
+	}
+	
+	@Test
+	public void testSpecQuery3() {
+		
+		AuthorCondition condition = new AuthorCondition();
+		condition.setName("test");
+		condition.setAge(18);
+		condition.setAgeTo(60);
+		condition.setSex(Sex.MAN);
+		authorRepository.findAll(new AuthorSpec(condition));
+		
+	}
+	
+	
+	
+	
 	
 	@Test
 	public void test1(){
