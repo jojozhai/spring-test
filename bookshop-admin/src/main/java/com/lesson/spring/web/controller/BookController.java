@@ -10,7 +10,8 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
-import org.springframework.data.web.PageableDefault;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -71,13 +72,15 @@ public class BookController {
 	@ApiOperation("获取图书详细信息")
 	public BookInfo getInfo(@ApiParam("图书ID") @PathVariable Long id) throws Exception {
 		
-		return bookService.getInfo(id);
 		
-//		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-//		System.out.println(authentication);
-//		if(authentication != null) {
-//			System.out.println(authentication.getPrincipal());
-//		}
+		
+		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+		System.out.println(authentication);
+		if(authentication != null) {
+			System.out.println(authentication.getPrincipal());
+		}
+		
+		return bookService.getInfo(id);
 		
 //		System.out.println(id);
 //		BookInfo bookInfo = new BookInfo();

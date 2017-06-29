@@ -13,6 +13,7 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.authentication.AuthenticationFailureHandler;
 import org.springframework.security.web.authentication.AuthenticationSuccessHandler;
+import org.springframework.social.security.SpringSocialConfigurer;
 
 /**
  * @author zhailiang
@@ -59,6 +60,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 		
+		SpringSocialConfigurer socialConfigurer = new SpringSocialConfigurer();
+		socialConfigurer.signupUrl("/regist.html");
+		
 		http.httpBasic()
 				.and()
 			.formLogin()
@@ -84,8 +88,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 //				.csrfTokenRepository(CookieCsrfTokenRepository.withHttpOnlyFalse())
 //				.and()
 				.authorizeRequests()
-				.antMatchers("/webjars/**", "/login", "/book", "/login.html", "/auth", "/session.html").permitAll()
-				.anyRequest().authenticated();
+				.antMatchers("/webjars/**", "/login", "/registUser","/book", "/regist.html", "/login.html", "/auth/**", "/session.html").permitAll()
+				.anyRequest().authenticated()
+				.and().apply(socialConfigurer);
 				//.access("@bookSecurity.check(authentication,request)");
 		
 	}
