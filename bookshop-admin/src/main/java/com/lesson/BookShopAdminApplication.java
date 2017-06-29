@@ -15,7 +15,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
  */
 @SpringBootApplication
 @EnableSwagger2
-@ImportResource("classpath:consumer.xml")
+//@ImportResource("classpath:consumer.xml")
 //@EnableJdbcHttpSession
 public class BookShopAdminApplication {
 

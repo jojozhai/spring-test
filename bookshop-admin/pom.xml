@@ -44,7 +44,7 @@
 		</dependency>
 		<dependency>
 			<groupId>com.roncoo.spring</groupId>
-			<artifactId>bookshop-api</artifactId>
+			<artifactId>bookshop</artifactId>
 			<version>1.0.0-SNAPSHOT</version>
 		</dependency>
 		<dependency>
