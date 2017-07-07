@@ -72,8 +72,6 @@ public class BookController {
 	@ApiOperation("获取图书详细信息")
 	public BookInfo getInfo(@ApiParam("图书ID") @PathVariable Long id) throws Exception {
 		
-		
-		
 		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
 		System.out.println(authentication);
 		if(authentication != null) {

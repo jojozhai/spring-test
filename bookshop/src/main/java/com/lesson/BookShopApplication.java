@@ -15,7 +15,7 @@ import com.lesson.support.BookShopRepositoryImpl;
  *
  */
 @SpringBootApplication
-@ImportResource("classpath:provider.xml")
+//@ImportResource("classpath:provider.xml")
 @EnableJpaRepositories(repositoryBaseClass = BookShopRepositoryImpl.class)
 public class BookShopApplication {
 

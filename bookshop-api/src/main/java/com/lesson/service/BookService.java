@@ -28,5 +28,6 @@ public interface BookService {
 	BookInfo update(BookInfo info);
 
 	void delete(Long id);
-
+	
+	void task() throws Exception;
 }

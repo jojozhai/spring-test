@@ -15,6 +15,12 @@ public class BookInfo implements Serializable {
 	public interface BookListView {};
 	public interface BookDetailView extends BookListView {};
 	
+	public BookInfo() {}
+	
+	public BookInfo(String name) {
+		this.name = name;
+	}
+	
 	private Long id;
 	
 	private String name;
