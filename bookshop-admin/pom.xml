@@ -136,5 +136,6 @@
 				</executions>
 			</plugin>
 		</plugins>
+		<finalName>admin</finalName>
 	</build>
 </project>

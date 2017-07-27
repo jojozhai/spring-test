@@ -104,5 +104,6 @@
 				</executions>
 			</plugin>
 		</plugins>
+		<finalName>provider</finalName>
 	</build>
 </project>
