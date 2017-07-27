@@ -9,10 +9,14 @@ import java.util.Map;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.cache.CacheManagerCustomizer;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ImportResource;
 import org.springframework.data.redis.cache.RedisCacheManager;
 import org.springframework.scheduling.annotation.EnableScheduling;
+
+import com.lesson.spring.web.config.TestProperties;
 
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
@@ -24,7 +28,8 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @EnableSwagger2
 @EnableCaching
 @EnableScheduling
-//@ImportResource("classpath:consumer.xml")
+@EnableConfigurationProperties(value = TestProperties.class)
+@ImportResource("classpath:consumer.xml")
 //@EnableJdbcHttpSession
 public class BookShopAdminApplication {
 
@@ -32,7 +37,9 @@ public class BookShopAdminApplication {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		SpringApplication.run(BookShopAdminApplication.class, args);
+		SpringApplication application = new SpringApplication(BookShopAdminApplication.class);
+		application.setAdditionalProfiles("prod", "a");
+		application.run(args);
 	}
 
 	@Bean

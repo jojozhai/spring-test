@@ -6,7 +6,7 @@ package com.lesson.spring.web.social.weixin.config;
 import java.nio.charset.Charset;
 import java.util.Map;
 
-import org.apache.commons.collections.MapUtils;
+import org.apache.commons.collections4.MapUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.converter.StringHttpMessageConverter;
